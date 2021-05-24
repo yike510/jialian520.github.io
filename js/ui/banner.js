@@ -19,7 +19,7 @@ function random(min, max) {
  * @param {string} title
  */
 function generateBanner(title) {
-  title = "杨恩勇的小站"
+  title = "123456"
   let sumH = 0;
   let lineTop = document.querySelector(".vertical-line-top");
   let lineBottom = document.querySelector(".vertical-line-bottom");
