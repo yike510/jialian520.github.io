@@ -18,7 +18,8 @@ function random(min, max) {
  * 生成标语
  * @param {string} title
  */
-function generateBanner() {
+function generateBanner(title) {
+  console.log(title)
   let sumH = 0;
   let lineTop = document.querySelector(".vertical-line-top");
   let lineBottom = document.querySelector(".vertical-line-bottom");
