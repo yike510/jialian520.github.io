@@ -19,6 +19,7 @@ function random(min, max) {
  * @param {string} title
  */
 function generateBanner(title) {
+  title = "沐辰の小屋"
   let sumH = 0;
   let lineTop = document.querySelector(".vertical-line-top");
   let lineBottom = document.querySelector(".vertical-line-bottom");
