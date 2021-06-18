@@ -1,10 +1,193 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>index</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="login.css">
+  <style>
+            @charset "utf-8";
+        body {
+           background-image: url(img/bgi.png);
+            height: 100vh;
+        }
+
+        .container {
+            /* 生成绝对定位元素,相对与上一级非空标签<body> */
+            position: absolute;
+            /* 将此区域移至水平和垂直方向的中间
+            但是只是此区域的上边和左边处于正中间 */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);/* 向x,y移动自身的50%，使整个区域处于页面正中间 */
+        }
+
+        form {
+            background: rgba(0,0,0, 0.3);
+            padding: 3em;
+            height: 320px;
+            border-radius: 20px;/* 圆角边框 */
+            backdrop-filter: blur(10px); /*为背景添加模糊效果*/
+            box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);/*h-shadow v-shadow blur spread color*/
+            text-align: center;
+            position: relative;/*生成相对定位的元素，相对于其正常位置进行定位*/
+            transition: all 0.2s ease-in-out;/*过渡动作*/
+        }
+
+        form p {
+            font-weight: 500;
+            color: #fff;
+            opacity: 0.7;/*透明级别*/
+            font-size: 1.4rem; /*相对于根元素的大小1.4倍*/
+            margin-top: 0;
+            margin-bottom: 60px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /*h-shadow v-shadow blur color;*/
+        }
+        
+        .line {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        form a {
+            text-decoration: none;
+            color: #ddd;
+            font-size: 12px;
+            padding-left: 16px;
+        }
+
+        form a:hover {
+            text-shadow: 2px 2px 6px #00000040;
+        }
+
+        form input {
+            background: transparent;/*背景全透明*/
+            width: 200px;
+            padding: 1em;
+            margin-bottom: 2em;
+            border: none;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-family: Montserrat, sans-serif;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;/*过渡动作*/
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        form input:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 获得输入的指定input的样式 */
+        form input[type="email"]:focus,
+        form input[type="password"]:focus {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        form input[type="button"] {
+            margin-top: 10px;
+            width: 150px;
+            font-size: 1rem;
+        }
+
+        form input[type="button"]:hover {
+            cursor: pointer;/*鼠标样式*/
+        }
+
+        form:hover {
+            margin: 15px;
+        }
+        
+        /* 选择placeholder添加样式 */
+        ::placeholder {
+            font-family: Montserrat, sans-serif;
+            font-weight: 400;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .drop {
+            background: rgba(0,0,0, 0.3);
+            backdrop-filter: blur(10px); /*为背景添加模糊效果*/
+            border-radius: 10px;/*圆角边框*/
+            /* box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2); */
+            position: absolute; /**/
+            transition: all 0.2s ease;
+        }
+
+        .drop-1 {
+            height: 80px;
+            width: 80px;
+            top: -30px;
+            left: -40px;
+            z-index: -1; /*元素的堆叠顺序*/
+        }
+
+        .drop-2 {
+            height: 80px;
+            width: 80px;
+            bottom: -30px;
+            right: -10px;
+        }
+
+        .drop-3 {
+            height: 100px;
+            width: 100px;
+            bottom: 120px;
+            right: -50px;
+            z-index: -1;
+        }
+
+        .drop-4 {
+            height: 120px;
+            width: 120px;
+            top: -60px;
+            right: -60px;
+        }
+
+        .drop-5 {
+            height: 60px;
+            width: 60px;
+            bottom: 170px;
+            left: 90px;
+            z-index: -1;
+        }
+
+        a,
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+  </style>
 </head>
+
 <body>
-<iframe src="http://ac.yunyoujun.cn" width="100%" height="100%"><iframe>
+    <div class="container">
+        <form>
+            <p>Login</p>
+            <input type="email" placeholder="admin" value=""><br>
+            <input type="password" placeholder="password"><br>
+            <input type="button" value="登录"><br>
+            <a href="#">注册</a>
+            <a class="line">|</a>
+            <a href="#">忘记密码?</a>
+        </form>
+
+        <div class="drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+            <div class="drop drop-4"></div>
+            <div class="drop drop-5"></div>
+        </div>
+    </div>
 </body>
+
 </html>
