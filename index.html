@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+	<div class="main">
+		<div class="top">
+			<div class="logo">
+				<img src="imgs/bgi.png" title="Logo" alt="Logo">
+			</div>
+			<div class="top-title">在线相册管理</div>
+			<div class="top-exit">
+				<input type="button" id="exit" value="退出">
+			</div>
+		</div>
+
+		<div class="bottom">
+			<!-- 左边导航栏 -->
+			<div class="bot-left">
+				<!-- 折叠侧边栏图标 -->
+				<div class="fold">
+					<img src="imgs/fold.png" alt="">
+				</div>
+				<!-- 展开侧边栏图标 -->
+				<div class="spread">
+					<img src="imgs/spread.png" alt="">
+				</div>
+				<!-- 侧边导航栏 -->
+				<div class="bot-title">
+					<div class="title1">
+						<span>类别管理</span>
+						<span class="zhankai-1">
+							<img src="imgs/展开.png" class="zhankai1">
+						</span>
+					</div>
+					<div class="title1-1"><span>添加类别</span></div>
+					<div class="title1-2"><span>类别列表</span></div>
+					<div class="title2">
+						<span>相片管理</span>
+						<span class="zhankai-2">
+							<img src="imgs/展开.png" class="zhankai2">
+						</span>
+					</div>
+					<div class="title2-1"><span>上传相片</span></div>
+					<div class="title2-2"><span>相片列表</span></div>
+					<div class="title3">相册管理</div>
+				</div>
+
+			</div>
+			<!-- 右边内容区域 -->
+			<div class="bot-right">
+				<!-- 第一个部分 添加类别 -->
+				<div class="add-genre">
+					<form>
+						<div class="bot-top-title">添加类别</div>
+						<div class="input-message">
+							类别编号：<input type="text" placeholder="请输入类别编号"><br />
+							类别名称：<input type="text" placeholder="请输入类别名称"><br />
+						</div>
+						<div class="add-btn">
+							<input type="submit" name="" id="add-btn" value="添加" />
+							<input type="reset" name="" id="reset-btn" value="重置" />
+						</div>
+						<div class="tab">
+							<table>
+								<caption style="font-size: 22px; margin-bottom: 20px;">类别列表</caption>
+								<tr>
+									<th>编号</th>
+									<th>名称</th>
+									<th>操作</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>旅游</td>
+									<td>
+										<input type="button" id="editor-btn" value="编辑" />
+										<input type="button" id="delete-btn" value="删除" />
+									</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>旅游</td>
+									<td>
+										<input type="button" id="editor-btn" value="编辑" />
+										<input type="button" id="delete-btn" value="删除" />
+									</td>
+								</tr>
+
+							</table>
+						</div>
+
+					</form>
+
+				</div>
+				<!-- 第二个部分 类别列表 -->
+				<div class="genre-list">
+					<div class="bot-top-title">类别列表</div>
+					<table class="list-tab">
+						<tr>
+							<th>编号</th>
+							<th>名称</th>
+							<th>操作</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>旅游</td>
+							<td>
+								<input type="button" id="editor-btn" value="编辑" />
+								<input type="button" id="delete-btn" value="删除" />
+							</td>
+						</tr>
+					</table>
+				</div>
+				<!-- 第三部分 上传相片 -->
+				<div class="add-img">
+					<div class="bot-top-title">上传相片</div>
+					<!-- 相片拖拽上传 -->
+					<div class="drop-box">
+						<label for="dorp-img">
+							<div>
+								<p>点击虚线区域</p>
+								<p>or</p>
+								<p>将文件拖拽到此处</p>
+							</div>
+
+						</label>
+					</div>
+					<div id="show-img"></div>
+					<!-- 下部按钮 -->
+					<div class="select-box">
+						<div class="select-btn">
+							<button>上传</button>
+							<button>重新选择</button>
+							<button>删除</button>
+						</div>
+
+					</div>
+				</div>
+				<!-- 第四部分 相片管理 -->
+				<div class="img-manage">
+					<div class="bot-top-title">相片列表</div>
+				</div>
+				<!-- 第五部分 相册管理 -->
+				<div class="package">
+					<div class="bot-top-title">相册管理</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<form>
+		<input id="dorp-img" type="file" style="display: none;" name="dorp-img" accept="image/*"
+			onchange="selectFile()">
+	</form>
+	<script>
+		var a = 0
+	</script>
+	<script type="text/javascript">
+
+		let tit1Fold = document.querySelector(".title1")  //获取一级标题“类别管理”div对象
+		let tit1Div1 = document.querySelector(".title1-1") //获取二级标题“添加类别”div对象
+		let tit1Div2 = document.querySelector(".title1-2") //获取二级标题“类别列表”div对象
+		let zhankai1 = document.querySelector(".zhankai-1") //获取展开图标的span对象
+		// 为一级标题的div增加点击事件
+		// 使此标题下的二级标题隐藏
+		if (a == 1) {
+			tit1Fold.onclick = function () {
+				tit1Div1.style.display = "none"
+				tit1Div2.style.display = "none"
+				zhankai1.style.display = "inline-block"
+				a = 1
+			}
+		}
+		zhankai1.onclick = function () {
+			tit1Div1.style.display = "block"
+			tit1Div2.style.display = "block"
+			zhankai1.style.display = "none"
+		}
+		let tit2Fold = document.querySelector(".title2") //获取一级标题“相片管理”的div对象
+		let tit2Div1 = document.querySelector(".title2-1") //获取二级标题“上传相片”div对象
+		let tit2Div2 = document.querySelector(".title2-2") //获取二级标题“相片列表”div对象
+		let zhankai2 = document.querySelector(".zhankai-2")
+		if (a == 1) {
+			tit2Fold.onclick = function () {
+				tit2Div1.style.display = "none"
+				tit2Div2.style.display = "none"
+				zhankai2.style.display = "inline-block"
+
+			}
+		}
+		zhankai2.onclick = function () {
+			tit2Div1.style.display = "block"
+			tit2Div2.style.display = "block"
+
+		}
+		let exit = document.querySelector("#exit")
+		exit.onclick = function () {
+			location.href = "login.html"
+		}
+		let title11 = document.querySelector(".title1-1") //获取"添加类别"标题的div对象
+		let title12 = document.querySelector(".title1-2") //获取"类别列表"标题的div对象
+		let title21 = document.querySelector(".title2-1") //获取"上传相片"标题的div对象
+		let title22 = document.querySelector(".title2-2") //获取"相片列表"标题的div对象
+		let title3 = document.querySelector(".title3") //获取"相册管理"标题的div对象
+
+		let addGenre = document.querySelector(".add-genre")//获取添加类别的div对象
+		let genreList = document.querySelector(".genre-list") //获取类别管理的div对象
+		let addImg = document.querySelector(".add-img")//获取添加相片的div对象
+		let imgManage = document.querySelector(".img-manage") //获取相片列表的div对象
+		let package = document.querySelector(".package")//获取相册管理的div对象
+		title11.onclick = function () {
+			addGenre.style.display = "block"
+			genreList.style.display = "none"
+			addImg.style.display = "none"
+			imgManage.style.display = "none"
+			package.style.display = "none"
+		}
+		title12.onclick = function () {
+			addGenre.style.display = "none"
+			genreList.style.display = "block"
+			addImg.style.display = "none"
+			imgManage.style.display = "none"
+			package.style.display = "none"
+		}
+		title21.onclick = function () {
+			addGenre.style.display = "none"
+			genreList.style.display = "none"
+			addImg.style.display = "block"
+			imgManage.style.display = "none"
+			package.style.display = "none"
+		}
+		title22.onclick = function () {
+			addGenre.style.display = "none"
+			genreList.style.display = "none"
+			addImg.style.display = "none"
+			imgManage.style.display = "block"
+			package.style.display = "none"
+		}
+		title3.onclick = function () {
+			addGenre.style.display = "none"
+			genreList.style.display = "none"
+			addImg.style.display = "none"
+			imgManage.style.display = "none"
+			package.style.display = "block"
+		}
+		// 设置div盒子的点击事件
+		let dropBox = document.querySelector(".drop-box")
+		let showImg = document.querySelector("#show-img")
+		dropBox.onclick = function () {
+			dropBox.style.display = "none"
+			showImg.style.display = "block"
+
+		}
+
+		// 将上传的图片显示出来
+		function selectFile() {
+			var files = document.getElementById('dorp-img').files;
+			var file = files[0];
+			var reader = new FileReader();
+			reader.readAsBinaryString(file);
+			reader.onload = function () {
+				var result = document.getElementById("show-img");
+				var src = "data:" + file.type + ";base64," + window.btoa(this.result);
+				result.innerHTML = '<label for="dorp-img"><img src ="' + src + '"/></label>';
+			}
+		}
+	</script>
+</body>
+
+</html>
