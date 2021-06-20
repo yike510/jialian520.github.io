@@ -165,20 +165,41 @@
         button:focus {
             outline: none;
         }
+       .login-up{
+          display: none;
+       }
   </style>
 </head>
 
 <body>
     <div class="container">
-        <form>
-            <p>Login</p>
-            <input type="email" placeholder="admin" value=""><br>
-            <input type="password" placeholder="password"><br>
-            <input type="button" value="登录"><br>
-            <a href="#">注册</a>
-            <a class="line">|</a>
-            <a href="#">忘记密码?</a>
-        </form>
+       <div class="login-in">
+            <form>
+                <p>Login in</p>
+                <input type=" email" placeholder="admin" value=""><br>
+                <input type="password" placeholder="password"><br>
+                <input type="button" value="登录"><br>
+                <a href="#" id="loginUp">注册</a>
+                <a class="line">|</a>
+                <a href="#">忘记密码?</a>
+            </form>
+        </div>
+        <div class="login-up">
+            <form>
+                <p>Login up</p>
+                <input type="email" placeholder="admin" value=""><br>
+                <input type="password" placeholder="password"><br>
+                <input type="button" value="注册"><br>
+                <a href="#" id="loginIn">登录</a>
+            </form>
+        </div>
+        <div class="drops">
+            <div class="drop drop-1"></div>
+            <div class="drop drop-2"></div>
+            <div class="drop drop-3"></div>
+            <div class="drop drop-4"></div>
+            <div class="drop drop-5"></div>
+        </div>
 
         <div class="drops">
             <div class="drop drop-1"></div>
@@ -188,6 +209,21 @@
             <div class="drop drop-5"></div>
         </div>
     </div>
+        <script>
+        let loginUp = document.querySelector("#loginUp")
+        let loginIn = document.querySelector("#loginIn")
+        let loginInPage = document.querySelector(".login-in")
+        let loginUpPage = document.querySelector(".login-up")
+        loginIn.onclick = function () {
+            loginInPage.style.display = "block"
+            loginUpPage.style.display = "none"
+        }
+        loginUp.onclick = function () {
+            // alert("123")
+            loginInPage.style.display = "none"
+            loginUpPage.style.display = "block"
+        }
+    </script>
 </body>
 
 </html>
