@@ -178,7 +178,7 @@
                 <p>Login in</p>
                 <input type=" email" placeholder="admin" value=""><br>
                 <input type="password" placeholder="password"><br>
-                <input type="button" value="登录"><br>
+                <input type="button" id="y" value="登录"><br>
                 <a href="#" id="loginUp">注册</a>
                 <a class="line">|</a>
                 <a href="#">忘记密码?</a>
@@ -224,7 +224,7 @@
             loginInPage.style.display = "none"
             loginUpPage.style.display = "block"
         }
-        let login =document.querySelector("#loginUp")
+        let login =document.querySelector("#y")
         login.onclick = function () {
             location.href="loginIndex.html"
         }
