@@ -164,7 +164,8 @@
 								</div>
 							</select>
 							<button>上传</button>
-							<button id="relect">重新选择</button>
+							<label for="dorp-img"><button>重新选择</button></lable>
+							
 							<button id="celect-del">删除</button>
 						</div>
 
@@ -297,15 +298,6 @@
 			dropBox.style.display = "none"
 			showImg.style.display = "block"
 		}
-		let relect = document.querySelector("#relect")
-		let selectDel = document.querySelector("#select-del")
-		let dropBox = document.querySelector(".drop-box")
-		relect.onclick = dropBox.onclick
-	
-		// 判断show-img 盒子是否为空
-		// function showDefImg(){
-		// 	showImg
-		// }
 	</script>
 </body>
 
