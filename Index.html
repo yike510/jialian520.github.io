@@ -299,10 +299,8 @@
 		}
 		let relect = document.querySelector("#relect")
 		let selectDel = document.querySelector("#select-del")
-		
-		relect.onclick = function(){
-			alert("123")
-		}
+		let dropBox = document.querySelector(".drop-box")
+		relect.onclick = dropBox.onclick
 	
 		// 判断show-img 盒子是否为空
 		// function showDefImg(){
