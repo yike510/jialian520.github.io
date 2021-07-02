@@ -17,7 +17,7 @@ body,div {
 	border-top: 0;
 	border-left: 0;
 	border-right: 0;
-	margin-left: px;
+	/* margin-left: px; */
 	/* background: #343A40; */
 	}
 .top div {
@@ -154,7 +154,7 @@ input[type="button"]:focus {
 	position: relative;
 	top: 50%;
 	transform: translateY(-70%);
-margin-left: 20px;
+	margin-left: 20px;
 	height: 30px;
 	/* border: 1px solid red; */
 }
@@ -174,19 +174,19 @@ margin-left: 20px;
 	background: white;
 	width: 100%;
 	height: 100%;
-	/* display: none; */
+	display: none;
 }
 .img-manage {
 	width: 100%;
 	height: 100%;
 	display: none;
-	overflow:scroll;
+	overflow-y:scroll;
 }
 .package {
 	width: 100%;
 	height: 100%;
-	display: none;
-	overflow:scroll;
+	/* display: none; */
+	overflow-y:scroll;
 }
 .add-genre {
 	width: 100%;
@@ -194,6 +194,14 @@ margin-left: 20px;
 	border-left: 0;
 
 }
+/* 6.28 */
+.img-list img {
+	display: inline-block;
+	width: 200px;
+	margin-top: 30px;
+	margin-left: 35px;
+}/* 6.28 */
+
 .bot-top-title {
 	text-align: center;
 	line-height: 80px;
@@ -395,7 +403,7 @@ tr:hover{
 	text-align-last:center;
 }
 #select-genre div {
-	padding: auto;
+	/* padding: auto; */
 	margin: 0 auto;
 	border: 1px solid red;
 } 
@@ -404,4 +412,32 @@ tr:hover{
 }
 .select-btn #select-genre:focus {
 	outline: none;
+}
+.package .pack {
+	width: 260px;
+	height: 300px;
+	background: rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	margin-left: 35px;
+	margin-top: 30px;
+}
+.package .pack div img {
+	padding: 2px;
+	width: 255px;
+	overflow:visible;
+	border: 1px dashed rgba(0, 0, 0, 0.1);
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.package .pack p {
+	margin-left: 5px;
+	margin-bottom: -5px;
+	text-align: center;
+}
+.pack div {
+	height: 220px;
+	overflow: hidden;
+	border: 3px rgba(0, 0, 0, 0.3) dashed;
 }
