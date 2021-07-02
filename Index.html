@@ -71,44 +71,44 @@
 			<div class="bot-right">
 				<!-- 第一个部分 添加类别 -->
 				<div class="add-genre">
-					<form>
-						<div class="bot-top-title">添加类别</div>
-						<div class="input-message">
-							类别名称：<input type="text" placeholder="请输入类别名称"><br />
-						</div>
-						<div class="add-btn">
-							<input type="submit" name="" id="add-btn" value="添加" />
-							<input type="reset" name="" id="reset-btn" value="重置" />
-						</div>
-						<div class="tab">
-							<table>
-								<caption style="font-size: 22px; margin-bottom: 20px;">类别列表</caption>
-								<tr>
-									<th>编号</th>
-									<th>名称</th>
-									<th>操作</th>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>旅游</td>
-									<td>
-										<input type="button" id="editor-btn" value="编辑" />
-										<input type="button" id="delete-btn" value="删除" />
-									</td>
-								</tr>
-								<tr>
-									<td>1</td>
-									<td>旅游</td>
-									<td>
-										<input type="button" id="editor-btn" value="编辑" />
-										<input type="button" id="delete-btn" value="删除" />
-									</td>
-								</tr>
 
-							</table>
-						</div>
+					<div class="bot-top-title">添加类别</div>
+					<div class="input-message">
+						类别名称：<input type="text" placeholder="请输入类别名称"><br />
+					</div>
+					<div class="add-btn">
+						<input type="submit" name="" id="add-btn" value="添加" />
+						<input type="reset" name="" id="reset-btn" value="重置" />
+					</div>
+					<div class="tab">
+						<table>
+							<caption style="font-size: 22px; margin-bottom: 20px;">类别列表</caption>
+							<tr>
+								<th>编号</th>
+								<th>名称</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>旅游</td>
+								<td>
+									<input type="button" id="" value="编辑" />
+									<input type="button" id="delete-btn" value="删除" />
+								</td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>旅游</td>
+								<td>
+									<input type="button" id="editor-btn" value="编辑" />
+									<input type="button" id="delete-btn" value="删除" />
+								</td>
+							</tr>
 
-					</form>
+						</table>
+					</div>
+
+
 
 				</div>
 				<!-- 第二个部分 类别列表 -->
@@ -133,16 +133,15 @@
 				<!-- 第三部分 上传相片 -->
 				<div class="add-img">
 					<div class="bot-top-title">上传相片</div>
-					<!-- 相片拖拽上传 -->
-					<div class="drop-box">
-						<label for="dorp-img">
+					<!-- 相片上传 -->
+					<div class="drop-box" onclick="selectFile()">
+						<label for="drop-img">
 							<div>
 								<p>点击虚线区域选择图片</p>
 								<p>and</p>
 								<p>点击下列按钮进行操作</p>
 								提示:选择图片后点击所选图片可重选图片
 							</div>
-
 						</label>
 					</div>
 					<div id="show-img"></div>
@@ -156,17 +155,11 @@
 								<div>
 									<option value="">旅游</option>
 								</div>
-								<div>
-									<option value="">写真</option>
-								</div>
-								<div>
-									<option value="">校园</option>
-								</div>
+
 							</select>
 							<button>上传</button>
-							<label for="dorp-img"><button>重新1选择</button></lable>
-							
-							<button id="celect-del">删除</button>
+							<button id="relect">重新选择</button>
+							<button>删除</button>
 						</div>
 
 					</div>
@@ -174,21 +167,67 @@
 				<!-- 第四部分 相片列表 -->
 				<div class="img-manage">
 					<div class="bot-top-title">相片列表</div>
-					<div class="img-list"></div>
+					<div class="img-list">
+						<!-- 循环输出相片开始 -->
+						<img src="imgs/1.jpg">
+						<img src="imgs/2.jpg">
+						<img src="imgs/3.jpg">
+						<img src="imgs/4.jpg">
+						<img src="imgs/5.jpg">
+						<img src="imgs/6.jpg">
+						<img src="imgs/7.jpg">
+						<img src="imgs/8.jpg">
+						<img src="imgs/9.jpg">
+						<img src="imgs/10.jpg">
+						<img src="imgs/11.jpg">
+						<img src="imgs/12.jpg">
+						<img src="imgs/13.jpg">
+						<img src="imgs/14.jpg">
+						<img src="imgs/15.jpg">
+						<img src="imgs/16.jpg">
+						<img src="imgs/17.jpg">
+						<img src="imgs/18.jpg">
+						<!-- 循环输出相片结束 -->
+					</div>
 				</div>
 				<!-- 第五部分 相册管理 -->
 				<div class="package">
 					<div class="bot-top-title">相册管理</div>
+
+					<!-- 循环输出相册开始 -->
+					<div class="pack">
+						<div><img src="imgs/1.jpg"></div>
+						<p>类名:</p>
+						<p>相片数量:</p>
+					</div>
+					<div class="pack">
+						<div><img src="imgs/2.jpg"></div>
+						<p>类名:</p>
+						<p>相片数量:</p>
+					</div>
+					<div class="pack">
+						<div><img src="imgs/3.jpg"></div>
+						<p>类名:</p>
+						<p>相片数量:</p>
+					</div>
+					<div class="pack">
+						<div><img src="imgs/4.jpg"></div>
+						<p>类名:</p>
+						<p>相片数量:</p>
+					</div>
+					<!-- 循环输出相册结束 -->
+
 				</div>
 			</div>
 		</div>
 
 	</div>
+
 	<form>
-		<input id="dorp-img" type="file" style="display: none;" name="dorp-img" accept="image/*" onchange="selectFile()"
-			onclick="showDefImg()">
+		<input id="drop-img" type="file" style="display: none;" name="dorp-img" accept="image/*"
+			onchange="selectFile()">
 	</form>
-	<a href="showTime.html">show</a>
+	<script src="js/jQuery.js"></script>
 	<script type="text/javascript">
 
 		let tit1Fold = document.querySelector(".title1")  //获取一级标题“类别管理”div对象
@@ -282,22 +321,28 @@
 
 		// 将上传的图片显示出来
 		function selectFile() {
-			var files = document.getElementById('dorp-img').files;
+			let files = document.getElementById('drop-img').files;
 			var file = files[0];
+			console.log(files)
+			console.log(file)
 			var reader = new FileReader();
 			reader.readAsBinaryString(file);
 			reader.onload = function () {
-
 				var result = document.getElementById("show-img");
 				var src = "data:" + file.type + ";base64," + window.btoa(this.result);
-				result.innerHTML = '<label for="dorp-img"><img src ="' + src + '"/></label>';
-
+				result.innerHTML = '<label for="drop-img"><img src ="' + src + '"/></label>';
 			}
 			// 设置div盒子的点击事件
 			let dropBox = document.querySelector(".drop-box")
 			let showImg = document.querySelector("#show-img")
 			dropBox.style.display = "none"
 			showImg.style.display = "block"
+		}
+		let relect = document.querySelector("#relect")
+		let relectBtn = document.querySelector("#drop-img")
+		relect.onclick = function () {
+			// alert("123")
+			relectBtn.onclick()
 		}
 	</script>
 </body>
