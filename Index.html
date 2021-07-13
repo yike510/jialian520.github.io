@@ -18,7 +18,7 @@
 			<div class="top-title">在线相册管理</div>
 			<div class="top-exit">
 				<input type="button" id="exit" value="退出">
-                                <a href="showTime.html>show</a>
+                                
 			</div>
 		</div>
 
@@ -161,6 +161,7 @@
 							<button>上传</button>
 							<button id="relect">重新选择</button>
 							<button>删除</button>
+                                                        <button id="showTime">show</button>
 						</div>
 
 					</div>
@@ -271,6 +272,10 @@
 		exit.onclick = function () {
 			location.href = "lindex.html"
 		}
+                let showTime = documeny.querySelector("showTime")
+                showTime.oncilck = function(){
+                    location.href = "showTime.html"
+                }
 		let title11 = document.querySelector(".title1-1") //获取"添加类别"标题的div对象
 		let title12 = document.querySelector(".title1-2") //获取"类别列表"标题的div对象
 		let title21 = document.querySelector(".title2-1") //获取"上传相片"标题的div对象
